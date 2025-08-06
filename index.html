@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPredict</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="md:text-2xl md:leading-10">
+   <header class="bg-indigo-100 shadow-md p-5">
+    <nav class="md:flex md:items-center md:justify-between md:max-w-[80%] mx-auto">
+      <!-- Logo and Hamburger -->
+      <div class="flex justify-between items-center">
+        <div class="flex gap-2 items-start">
+          <div class="p-3 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center">
+            <img src="images/icons8-brain-64.png" alt="Logo" class="w-6">
+          </div>
+            <div>
+              <h1 class="cursor-pointer text-2xl font-bold text-gray-800">AutoPredict</h1>
+          <div class="text-sm text-gray-500">AI Diagnostics</div>
+            </div>
+        </div>
+        <!-- Mobile Menu Button -->
+        <span class="text-3xl cursor-pointer md:hidden block" id="mobileMenuBtn">
+          <i class="fa fa-bars"></i>
+        </span>
+      </div>
+
+      <!-- Navigation Links -->
+      <div>
+        <ul class="md:flex md:items-center md:z-auto md:static absolute bg-indigo-100 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 z-50" id="mobileMenu">
+          <li class="mx-4 my-6 md:my-0">
+            <a href="#" class="text-xl hover:text-cyan-500 duration-500">Features</a>
+          </li>
+          <li class="mx-4 my-6 md:my-0">
+            <a href="#" class="text-xl hover:text-cyan-500 duration-500">Dashboard</a>
+          </li>
+          <li class="mx-4 my-6 md:my-0">
+            <a href="#" class="text-xl hover:text-cyan-500 duration-500">Technology</a>
+          </li>
+          <li class="mx-4 my-6 md:my-0">
+            <a href="#" class="text-xl hover:text-cyan-500 duration-500">Research</a>
+          </li>
+          <li class="mx-4 my-4 md:my-0">
+            <button class="bg-white text-gray-800 px-6 py-2 rounded hover:bg-gray-200 transition"><a href="login.html">Login</a></button>
+          </li>
+          <li class="mx-4 my-4 md:my-0">
+            <button class="bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 transition"><a href="signup.html">Sign Up</a></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero-section bg-gradient-to-r from-[#417DF5] to-[#5A59F2] p-10 text-center text-white">
+        <div class="md:max-w-[80%] mx-auto md:my-15">
+            <h2 class="text-3xl font-bold mb-4 md:text-5xl">Predictive <span class="text-green-300">Analytics</span> for Sustainable Mobility</h2>
+            <p>Revolutionizing automotive maintenance through AI-driven diagnostics, reducing environmental impact and optimizing vehicle performance in developing economies.</p>
+            <button class="mt-6 bg-gray-100/20 px-8 py-2 rounded hover:bg-gray-200 transition border"><i class="fa fa-bolt" aria-hidden="true"></i>Start Diagnostics</button>
+            <button class="mt-3 bg-gray-100/20 px-10 py-2 rounded hover:bg-gray-200 transition border">View Technology</button>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-10 items-center">
+                <div class="px-6 py-5 bg-gray-100/10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col justify-between items-center mt-8 gap-2 md:gap-4">
+                    <i class="fa fa-car text-green-300" aria-hidden="true"></i>
+                    <span class="text-4xl font-bold">95%</span>
+                    <p class="text-white/70">Breakdown Prevention</p>
+                </div>
+                <div class="px-6 py-5 bg-gray-100/10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col justify-between items-center mt-8 gap-2 md:gap-4">
+                    <i class="fa fa-line-chart" aria-hidden="true"></i>
+                    <span class="text-4xl font-bold">40%</span>
+                    <p class="text-white/70">Cost Reduction</p>
+                </div>
+                <div class="px-6 py-5 bg-gray-100/10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-200 flex flex-col justify-between items-center mt-8 gap-2 md:gap-4">
+                    <img src="images/brainstorm (1).png" alt="AI Icon">
+                    <span class="text-4xl font-bold">AI</span>
+                    <p class="text-white/70">Powered Insights</p>
+                </div>
+                </div>
+        </div>
+    </section>
+    <!--Features Section-->
+    <section class="features-section bg-[#fafafa] py-16 px-6 text-center text-gray-600">
+      <div class="md:max-w-[80%] mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-gray-800 md:text-5xl">Revolutionary <span class="text-[#619bf8]">Features</span></h2>
+  <p>Our integrated platform combines cutting-edge AI technology with sustainable practices to transform automotive maintenance across developing economies.</p>
+
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-10">
+    <!-- Feature 1 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center mb-4">
+        <img src="images/icons8-brain-64.png" alt="Logo" class="w-4">
+      </div>
+      <h3 class="text-black font-bold mb-2">AI-Powered Diagnostics</h3>
+      <p>Machine learning algorithms analyze vehicle telemetrics data to predict mechanical faults before they occur.</p>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#619bf8] to-[#18b150] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-bar-chart text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Predictive Analytics</h3>
+      <p>Advanced data analytics to forecast maintenance needs and optimize service schedules for maximum efficiency.</p>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#5e54f1] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-leaf text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Sustainable Solutions</h3>
+      <p>Reduce environmental impact through optimized maintenance schedules and minimized breakdown frequency.</p>
+    </div>
+
+    <!-- Feature 4 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#5e54f1] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-cog text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Reliability Assurance</h3>
+      <p>Comprehensive diagnostic systems that ensure vehicle reliability and safety for all road conditions.</p>
+    </div>
+
+    <!-- Feature 5 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-wrench text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Smart Maintenance</h3>
+      <p>Shift from reactive to preventive maintenance with intelligent scheduling and parts optimization.</p>
+    </div>
+
+    <!-- Feature 6 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#18b150] to-[#70db97] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-globe text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Global Accessibility</h3>
+      <p>Designed specifically for developing economies with cost-effective and scalable solutions.</p>
+    </div>
+
+    <!-- Feature 7 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#619bf8] to-[#18b150] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-mobile text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Mobile Integration</h3>
+      <p>Seamless mobile app integration for real-time monitoring and instant diagnostic reports.</p>
+    </div>
+
+    <!-- Feature 8 -->
+    <div class="bg-white px-6 py-10 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center">
+      <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#5e54f1] text-white rounded-full flex items-center justify-center mb-4">
+        <i class="fa fa-database text-2xl"></i>
+      </div>
+      <h3 class="text-black font-bold mb-2">Data Intelligence</h3>
+      <p>Comprehensive data collection and analysis using modern programming tools and machine learning.</p>
+    </div>
+  </div>
+      </div>
+  
+</section>
+
+    <!--Dashboard Section-->
+    <section class="dashboard-section bg-[#e7effc] py-16 px-6 text-center text-gray-600">
+      <div class="md:max-w-[80%] mx-auto">
+        <h2 class="text-3xl text-gray-800 font-bold mb-4 md:text-5xl">Live Dashboard</h2>
+      <p>Real-time monitoring and predictive analytics dashboard showcasing vehicle health, maintenance schedules, and cost optimization metrics.</p>
+      <div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-10">
+          <div class="px-6 py-8 rounded bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2 text-white">
+            <div class="flex justify-between items-center gap-4">
+            <h4>Total Vehicles</h4>
+            <img src="images/heart-beat.png" alt="Total Vehicles Icon">
+          </div>
+          <div class="font-bold text-2xl">247</div>
+          <span>+12% from last month</span>
+        </div>
+        <div class="px-6 py-8 rounded bg-gradient-to-r from-[#18b150] to-[#70db97] text-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2">
+            <div class="flex justify-between items-center gap-4">
+            <h4>Health Score</h4>
+            <img src="images/trend.png">
+          </div>
+          <div class="font-bold text-2xl">82%</div>
+          <span>Average fleet health</span>
+        </div>
+        <div class="px-6 py-8 rounded bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2">
+            <div class="flex justify-between items-center gap-4">
+            <h4>Cost Savings</h4>
+            <i class="fa fa-usd" aria-hidden="true"></i>
+          </div>
+          <div class="font-bold text-2xl">$47,320</div>
+          <span>This quarter</span>
+        </div>
+        <div class="px-6 py-8 rounded bg-white shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2">
+            <div class="flex justify-between items-center gap-4">
+            <h4>Fuel Efficiency</h4>
+            <img src="images/oil-tank.png" alt="Oil Tank Icon">
+          </div>
+          <div class="font-bold text-2xl">+23%</div>
+          <span>Improvement rate</span>
+        </div>
+      </div>  
+</div>
+      </div>
+      
+    </section>
+    <!--Technology Section-->
+    <section class="text-gray-600 text-center py-12 px-6 ">
+      <div class="md:max-w-[80%] mx-auto">
+        <h2 class="text-gray-800 text-2xl font-bold md:text-5xl mt-4">Core Infrastructure</h2>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mt-10">
+            <div class="px-6 py-8 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center"><i class="fa fa-tachometer text-2xl" aria-hidden="true"></i></div>
+          <h4 class="font-bold">Vehicle Telemetrics</h4>
+          <p>Real-time data collection from automotive sensors and systems</p>
+        </div>
+          
+            <div class="px-6 py-8 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2">
+        <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center">
+          <i class="fa fa-cloud text-2xl"></i></div>
+          <h4>Cloud Processing</h4>
+          <p>Scalable cloud infrastructure for data processing and storage</p>
+        </div>
+        <div class="px-6 py-8 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col  justify-between items-center mt-8 gap-2">
+          <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center"><i class="fa fa-bolt text-2xl"></i></div>
+          <h4>Edge Computing</h4>
+          <p>Local processing capabilities for immediate diagnostic responses</p>
+        </div>
+        <div class="px-6 py-8 rounded shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between items-center mt-8 gap-2">
+          <div class="w-16 h-16 bg-gradient-to-r from-[#4d8ef7] to-[#619bf8] text-white rounded-full flex items-center justify-center"><img src="images/icons8-bracket-48.png" alt="Bracket"></div>
+          <h4>Open Standards</h4>
+          <p>Built on open protocols ensuring compatibility and extensibility</p>
+        </div>
+        </div>
+      
+      </div>
+      
+    </section>
+    <!--Research Section-->
+    <section class="bg-white text-center px-4 py-12">
+      <div class="md:max-w-[80%] mx-auto">
+        <h2 class="text-gray-800 font-bold mb-4 md:text-5xl">Based on Academic Research</h2>
+      <div class="bg-[#f2f7ff] p-4 text-gray-600 md:p-8">
+        <h5 class="mb-4">"Integrating Predictive Analytics and AI-Driven Software Solutions for Sustainable Automotive Maintenance in Developing Economies"</h5>
+        <p><span class="font-bold">Authors: </span>Adeoye A.S*, ¹Ajayi A.A, ²Anifowose M.</p>
+        <p><span class="font-bold">Institution: </span>Department of Computer Science, Adeyemi Federal University of Education Ondo.</p>
+        <div class="flex gap-2 flex-wrap mt-4 text-xs md:justify-center md:text-base">
+          <div class="px-3 py-2 border rounded-full text-black">Predictive Maintenance</div>
+          <div class="px-3 py-2 border rounded-full text-black">AI</div>
+          <div class="px-3 py-2 border rounded-full text-black">Automotive Diagnostics</div>
+          <div class="px-3 py-2 border rounded-full text-black">Sustainability</div>
+          <div class="px-3 py-2 border rounded-full text-black">Developing Economies</div>
+          <div class="px-3 py-2 border rounded-full text-black">Software Engineering</div>
+        </div>
+      </div>
+      </div>
+      
+    </section>
+  </main>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
+<!--<i class="fa fa-wrench" aria-hidden="true"></i>
+<i class="fa fa-leaf" aria-hidden="true"></i>
+<i class="fa fa-mobile" aria-hidden="true"></i>
+<i class="fa fa-globe" aria-hidden="true"></i>
+<i class="fa fa-bar-chart" aria-hidden="true"></i>
+<i class="fa fa-database" aria-hidden="true"></i>
+<i class="fa fa-cog" aria-hidden="true"></i>
+deep blue- #4d8ef7
+light blue- #619bf8
+backgrund white - #fafafa
+card white - #fdfdfd
+dark green - #18b150
+light green - #70db97
+purple - #5e54f1
+-->
