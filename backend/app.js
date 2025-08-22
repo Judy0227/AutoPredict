@@ -31,5 +31,6 @@ app.set("view engine", "ejs");
 
 app.use("/", pageRoutes);
 
+
 // middleware and static files
 app.use(express.static("public"));

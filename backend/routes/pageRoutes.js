@@ -1,12 +1,15 @@
 const express = require("express");
-const { renderHome} = require("../controllers/pageController");
+const pageController = require("../controllers/pageController");
 
 
 
 const router = express.Router();
 
 
-router.get("/", renderHome);
+router.get("/", pageController.Home);
+router.get("/signup", pageController.signUpPage)
+router.get("/login", pageController.loginPage)
+
 
 
 module.exports = router;
