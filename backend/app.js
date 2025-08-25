@@ -2,7 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const pageRoutes = require("./routes/pageRoutes");
+const pageRoutes = require("./frontpage/pageRoutes");
+const routes = require("./routes");
 
 const app = express();
 
@@ -30,6 +31,7 @@ connectToDb();
 app.set("view engine", "ejs");
 
 app.use("/", pageRoutes);
+app.use("/", routes)
 
 
 // middleware and static files
