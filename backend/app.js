@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cors = require("cors");
 require("./config/db");
 const pageRoutes = require("./frontpage/pageRoutes");
 const routes = require("./routes");
@@ -16,11 +17,17 @@ const { PORT } = process.env;
   console.log(`Server listening on port ${PORT}`);
 });
 
+app.use(express.json());       // for JSON request bodies
+app.use(express.urlencoded({ extended: true })); // for form data
+
+
 // register view engine
 app.set("view engine", "ejs");
+app.use(cors());
+
 
 app.use("/", pageRoutes);
-app.use("/", routes)
+app.use("/user", routes)
 
 
 // middleware and static files
