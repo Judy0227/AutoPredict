@@ -19,6 +19,8 @@ const { PORT } = process.env;
 
 app.use(express.json());       // for JSON request bodies
 app.use(express.urlencoded({ extended: true })); // for form data
+app.use("/scripts", express.static(__dirname + "/scripts"));
+
 
 
 // register view engine

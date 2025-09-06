@@ -1,8 +1,10 @@
+console.log("Signup.js loaded!!!");
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
 const firstName = document.getElementById('fname');  
-const signupForm = document.getElementById('signup-form'); 
+const signupForm = document.getElementById('signup-form');
+console.log("Form:", signupForm);
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelectorAll('.toggle-password');
@@ -70,8 +72,10 @@ function validateConfirmPassword() {
 }
 
 // Submit handler
-signupForm.addEventListener('Sign Up', async (e) => {
+signupForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+  console.log("Submit event intercepted");  // <-- add this
+
 
   const formData = {
     firstName: firstName.value,
@@ -92,7 +96,7 @@ signupForm.addEventListener('Sign Up', async (e) => {
       alert('Signup successful!');
       console.log(data);
       // redirect if needed
-      window.location.href = "..views/login.ejs";
+      window.location.href = "/login";
     } else {
       alert(data || 'Signup failed');
     }

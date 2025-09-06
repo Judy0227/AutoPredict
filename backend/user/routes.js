@@ -35,4 +35,10 @@ router.post("/signup", async (req, res) => {
     }
 });
 
+//login
+router.get("/login", (req, res) => {
+  res.render("login"); // looks for views/login.ejs
+});
+
+
 module.exports = router;
