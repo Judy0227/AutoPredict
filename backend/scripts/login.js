@@ -57,3 +57,36 @@ password.addEventListener('blur', validatePassword);
       }
     
 }
+
+
+// login handler
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = {
+    email: email.value,
+    password: password.value,
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/user/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('login successful!');
+      console.log(data);
+      // redirect if needed
+      window.location.href = "/";
+    } else {
+      alert(data || 'login failed');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Something went wrong');
+  }
+});

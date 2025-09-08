@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Diagnostic Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    #results {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Car Diagnostic Results</h1>
+
+  <!-- Where we show AI response -->
+  <div id="results">
+    <p><strong>Possible Issues:</strong></p>
+    <ul id="issuesList"></ul>
+
+    <p><strong>Maintenance Suggestions:</strong></p>
+    <ul id="maintenanceList"></ul>
+  </div>
+
+  <script>
+    async function runDiagnostics(anomalies, mileage) {
+      const email = localStorage.getItem("userEmail");
+
+      const response = await fetch("http://localhost:3000/diagnose", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, anomalies, mileage })
+      });
+
+      const data = await response.json();
+      console.log("Diagnosis:", data);
+
+      // Update the page with AI response
+      const issuesList = document.getElementById("issuesList");
+      const maintenanceList = document.getElementById("maintenanceList");
+
+      issuesList.innerHTML = "";
+      maintenanceList.innerHTML = "";
+
+      if (data.possibleIssues) {
+        data.possibleIssues.forEach(issue => {
+          const li = document.createElement("li");
+          li.textContent = issue;
+          issuesList.appendChild(li);
+        });
+      }
+
+      if (data.maintenanceSuggestions) {
+        data.maintenanceSuggestions.forEach(suggestion => {
+          const li = document.createElement("li");
+          li.textContent = suggestion;
+          maintenanceList.appendChild(li);
+        });
+      }
+    }
+
+    // Example: auto-run with some dummy anomalies
+    runDiagnostics(["engine noise", "smoke exhaust"], 45000);
+  </script>
+</body>
+</html>

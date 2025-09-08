@@ -1,10 +1,10 @@
 const express = require("express");
-const { createNewUser, authenticateUser } = require("./controller")
+const { createNewUser, authenticateUser, authMiddleware } = require("./controller")
 
 const router = express.Router();
 
 
-app.get("/dashboard", authMiddleware, (req, res) => {
+router.get("/dashboard", authMiddleware, (req, res) => {
   res.send(`Welcome ${req.session.user.username}! 🚗`);
 });
 
@@ -12,7 +12,6 @@ app.get("/dashboard", authMiddleware, (req, res) => {
 router.post("/signup", async (req, res) => {
     try {
         let { firstName, email, password } = req.body;
-        console.log(req.body);
         firstName =firstName.trim();
         email = email.trim();
         password = password.trim();
@@ -40,7 +39,7 @@ router.post("/signup", async (req, res) => {
 });
 
 //login
-router.post("/", async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
         let { email, password } = req.body;
         email = email.trim();

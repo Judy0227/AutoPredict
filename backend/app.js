@@ -12,8 +12,8 @@ const app = express();
 const { PORT } = process.env;
 
 
-    // app listening to request
-    app.listen(PORT, () => {
+// app listening to request
+app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
@@ -30,6 +30,7 @@ app.use(cors());
 
 app.use("/", pageRoutes);
 app.use("/user", routes)
+app.use("/diagnose", routes)
 
 
 // middleware and static files

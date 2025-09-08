@@ -60,4 +60,4 @@ const createNewUser = async (data) => {
     }
 };
 
-module.exports = { createNewUser, authenticateUser }
+module.exports = { createNewUser, authenticateUser, authMiddleware }
