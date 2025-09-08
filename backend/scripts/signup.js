@@ -74,8 +74,6 @@ function validateConfirmPassword() {
 // Submit handler
 signupForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  console.log("Submit event intercepted");  // <-- add this
-
 
   const formData = {
     firstName: firstName.value,

@@ -16,3 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+  const banner = document.getElementById("authReminder");
+
+  setInterval(() => {
+    banner.style.display = (banner.style.display === "none") ? "block" : "none";
+  }, 5000);

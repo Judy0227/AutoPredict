@@ -1,6 +1,15 @@
 const User = require("./model")
 const { hashData, verifyHashedData } = require("../utils/hashData")
 
+const authMiddleware = async(req, res, next) => {
+  if (req.session.user) {
+    next();
+  } else {
+    res.redirect("/login");
+  }
+}
+
+
 const authenticateUser = async (data) => {
     try {
         const { email, password } = data;

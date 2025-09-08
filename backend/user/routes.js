@@ -4,6 +4,10 @@ const { createNewUser, authenticateUser } = require("./controller")
 const router = express.Router();
 
 
+app.get("/dashboard", authMiddleware, (req, res) => {
+  res.send(`Welcome ${req.session.user.username}! 🚗`);
+});
+
 // signup
 router.post("/signup", async (req, res) => {
     try {
