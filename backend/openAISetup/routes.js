@@ -1,6 +1,6 @@
 const express = require("express");
-const User = require("..user/model")
-const openai = require("./setup")
+const User = require("../user/model")
+const client = require("./setup")
 
 const router = express.Router();
 
@@ -28,18 +28,21 @@ router.post("/diagnose", async (req, res) => {
     `;
 
     // Call ChatGPT
-    const completion = await openai.createChatCompletion({
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: prompt }],
-    });
+const response = await client.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages: [{ role: "user", content: prompt }],
+});
+
+console.log(response.choices[0].message);
+
 
     // Parse AI response
-    let aiResponse;
-    try {
-      aiResponse = JSON.parse(completion.data.choices[0].message.content);
-    } catch (e) {
-      return res.status(500).json({ message: "Invalid AI response" });
-    }
+let aiResponse;
+try {
+  aiResponse = JSON.parse(response.data.choices[0].message.content);
+  } catch (e) {
+    return res.status(500).json({ message: "Invalid AI response" });
+  }
 
     res.json(aiResponse);
   } catch (err) {

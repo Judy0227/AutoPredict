@@ -1,3 +1,3 @@
-const routes = require("./routes");
+const aiRoutes = require("./routes");
 
-module.exports = routes;
+module.exports = aiRoutes;
